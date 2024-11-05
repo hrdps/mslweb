@@ -1,0 +1,129 @@
+@font-face {
+  font-family: 'CustomFont';
+  src: url('../../assets/samanFont.ttf') format('truetype');
+}
+
+#vslider {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#fsvs-body {
+  width: 100%;
+  height: 100vh;
+}
+
+.page {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+  background-size: cover !important;
+}
+.page h2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  text-shadow: 4px 4px 15px rgb(0, 0, 0);
+  font-family: 'CustomFont', sans-serif;
+  font-size: 250%;
+}
+
+.page .pinico {
+  color: rgb(136, 0, 0);
+  filter: drop-shadow(-4px 4px 15px #ffffff);
+  margin-right: 10px;
+}
+#backone {
+  background: url('../../assets/Mumbai.png');
+  filter: brightness(100%);
+}
+#backtwo {
+  background: url('../../assets/Delhi.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+#backthree {
+  background: url('../../assets/Bangalore.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+#backfour {
+  background: url('../../assets/Chennai.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+#backfive {
+  background: url('../../assets/Hyderabad.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+#backsix {
+  background: url('../../assets/Ahmedabad.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+#backseven {
+  background: url('../../assets/Pune.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+#backeight {
+  background: url('../../assets/Kolkata.jpg');
+  filter: brightness(100%);
+  background-size: cover;
+}
+
+.pagination {
+  position: fixed;
+  top: 50%;
+  right: 2%;
+  transform: translateY(-50%);
+  z-index: 999;
+}
+
+.pagination button {
+  display: block;
+  margin: 15px 0;
+  color: #000000cc;
+  border: 0px;
+  backdrop-filter: blur(10px);
+  background-blend-mode: overlay;
+  box-shadow: 0 10px 15px rgb(0 0 0 / 20%);
+  border-radius: 50%;
+  background-color: #ffffffc3;
+  cursor: pointer;
+}
+.pagination span {
+  display: block;
+  text-align: center;
+  padding: 10px 12px;
+  line-height: 1em;
+  font-weight: 900;
+  font-size: large;
+  color: #000000b2;
+}
+#button0 {
+  background-color: #1f1f4da6;
+  border: 0.1px solid rgb(255, 255, 255);
+}
+#button0 img {
+  filter: invert(100%);
+}
+#button0 span {
+  color: #ffffffb1;
+}
+.pagiButton img {
+  width: 40px;
+}
