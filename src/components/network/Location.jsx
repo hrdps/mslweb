@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { RiMapPin2Fill } from '@remixicon/react';
 import network_image from '../../assets/India_map.png';
-import map_pin from '../../assets/icons/map_pin.png';
 import msl_img from '../../assets/msl-logo-black.png';
 import './Location.css';
 
