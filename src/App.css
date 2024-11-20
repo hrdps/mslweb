@@ -1,4 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 * {
   margin: 0;
   padding: 0;
 }
+
+.bangers-regular {
+  font-family: "Bangers", system-ui;
+  font-weight: normal;
+  font-style: normal;
+}
+/* 
+.css-1y0bycm {
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.row1 {
+  animation-name: row1-animation;
+}
+
+.row2 {
+  animation-name: row2-animation;
+}
+
+@keyframes row1-animation {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes row2-animation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+} */
