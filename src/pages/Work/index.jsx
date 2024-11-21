@@ -1,32 +1,79 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Box, Tabs, TabList, Tab, TabPanels, TabPanel, Alert, AlertIcon, Spinner } from '@chakra-ui/react';
 import Card from '../../components/work/card';
 
 const MarqueeRow = ({ cards, isReverse }) => {
-  const duplicatedCards = [...cards, ...cards, ...cards, ...cards];
+  const scrollRef = useRef(null);
+  const duplicatedCards = [...cards, ...cards];
+
+  useEffect(() => {
+    const scrollContainer = scrollRef.current;
+    if (!scrollContainer) return;
+
+    if (isReverse) {
+      scrollContainer.scrollLeft = scrollContainer.scrollWidth / 2;
+    }
+
+    const scroll = () => {
+      const scrollSpeed = 0.5;
+
+      if (isReverse) {
+        if (scrollContainer.scrollLeft <= 0) {
+          scrollContainer.scrollLeft = scrollContainer.scrollWidth / 2;
+        } else {
+          scrollContainer.scrollLeft -= scrollSpeed;
+        }
+      } else {
+        if (scrollContainer.scrollLeft >= scrollContainer.scrollWidth / 2) {
+          scrollContainer.scrollLeft = 0;
+        } else {
+          scrollContainer.scrollLeft += scrollSpeed;
+        }
+      }
+    };
+
+    let animation = setInterval(scroll, 2.5);
+
+    const handleHover = () => {
+      clearInterval(animation);
+      animation = setInterval(scroll, 75);
+    }
+    const handleLeave = () => {
+      clearInterval(animation);
+      animation = setInterval(scroll, 2.5);
+    };
+
+    scrollContainer.addEventListener('mouseenter', handleHover);
+    scrollContainer.addEventListener('mouseleave', handleLeave);
+
+    return () => {
+      clearInterval(animation);
+      if (scrollContainer) {
+        scrollContainer.removeEventListener('mouseenter', handleHover);
+        scrollContainer.removeEventListener('mouseleave', handleLeave);
+      }
+    };
+  }, [isReverse]);
 
   return (
-    <Box className="marquee-container" overflow="hidden" position="relative" w="100%">
+    <Box
+      ref={scrollRef}
+      className="marquee-container"
+      overflow="hidden"
+      position="relative"
+      w="100%"
+      css={{
+        '&::-webkit-scrollbar': {
+          display: 'none'
+        },
+        scrollbarWidth: 'none',
+        'msOverflowStyle': 'none'
+      }}
+    >
       <Box
         className="marquee-content"
         display="flex"
         position="relative"
-        animation={`${isReverse ? 'marqueeReverse' : 'marquee'} 30s linear infinite`}
-        _hover={{ animationPlayState: 'paused' }}
-        sx={{
-          '@keyframes marquee': {
-            '0%': { transform: 'translateX(0)' },
-            '100%': { transform: 'translateX(-50%)' }
-          },
-          '@keyframes marqueeReverse': {
-            '0%': { transform: 'translateX(0)' },
-            '100%': { transform: 'translateX(50%)' }
-          }
-        }}
-        {...(isReverse && {
-          flexDir: 'row-reverse',
-          ml: 'auto'
-        })}
       >
         {duplicatedCards.map((card, index) => (
           <Box
@@ -42,6 +89,7 @@ const MarqueeRow = ({ cards, isReverse }) => {
     </Box>
   );
 };
+
 
 const Work = () => {
   const [cards, setCards] = useState([]);
@@ -94,7 +142,6 @@ const Work = () => {
     fetchCards();
   }, []);
 
-  // Filter cards based on selected category
   const handleCategoryChange = (category) => {
     setSelectedCategory(category);
     if (category === 'ALL') {
@@ -114,10 +161,10 @@ const Work = () => {
   ];
 
   const rows = [];
-  for (let i = 0; i < filteredCards.length; i += 4) {
-    rows.push(filteredCards.slice(i, i + 4));
+  for (let i = 0; i < filteredCards.length; i += 3) {
+    rows.push(filteredCards.slice(i, i + 3));
   }
-  
+
   return (
     <Box
       px={{ base: 4, md: 8 }}
@@ -168,8 +215,8 @@ const Work = () => {
                 <TabPanel key={index}>
                   {rows.map((row, rowIndex) => (
                     <Box key={rowIndex} mt={{ base: 8, md: 16 }}>
-                      <MarqueeRow 
-                        cards={row} 
+                      <MarqueeRow
+                        cards={row}
                         isReverse={rowIndex % 2 !== 0}
                       />
                     </Box>
@@ -188,7 +235,7 @@ export default Work;
 
 async function fetchMediaUrl(apiUrl, apiToken, mediaId) {
   try {
-    const mediaResponse = await fetch(`${apsiUrl}/media/${mediaId}`, {
+    const mediaResponse = await fetch(`${apiUrl}/media/${mediaId}`, {
       headers: {
         'Authorization': `Bearer ${apiToken}`,
         'Content-Type': 'application/json'

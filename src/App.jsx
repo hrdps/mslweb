@@ -7,13 +7,10 @@ import Entity from './components/entity/Entity.jsx';
 import FourZeroFour from './components/fourzerofour/FourZeroFour.jsx';
 import Work from './pages/Work';
 import CaseStudy from './pages/Case';
-import Header from './components/header';
-import Footer from './components/footer';
 
 function App() {
   return (
     <Router>
-      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/network' element={<Network />} />
@@ -24,9 +21,8 @@ function App() {
         <Route path="/work/case-study/:slug" element={<CaseStudy />} />
 
       </Routes>
-      <Footer />
     </Router>
-    
+
   );
 }
 
