@@ -1,0 +1,75 @@
+html {
+  background-color: #000000;
+}
+#scroll_div {
+  animation: spotlight-animation 1s alternate infinite;
+}
+
+@keyframes spotlight-animation {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    background: url('./assets/office1_l.png') fixed center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  20%,
+  24%,
+  55% {
+    background: url('./assets/office1.png') fixed center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+.entity_div {
+  width: 100vw;
+  height: 100vh;
+}
+.entity_card_container {
+  background-color: black;
+  height: 60vh;
+  width: 50vh;
+  margin-right: 10vw;
+  border-radius: 25px;
+  box-shadow: rgba(255, 250, 200, 0.506) 39.9983px 50px 39px 0px inset,
+    40px 50px 29px rgb(0, 0, 0, 0.85);
+}
+.entity_card_image {
+  height: 30vh;
+  width: 50vh;
+
+  border-radius: 25px;
+  box-shadow: inset 40px 50px 39px 0px rgba(255, 250, 200, 0.506);
+  background: linear-gradient(330deg, #082992, #497dff, #aeaef5, #ffd8c9);
+  background-size: 240% 240%;
+  animation: gradient-animation 16s ease infinite;
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center;
+}
+.entity_card_image > img {
+  width: 40%;
+  filter: drop-shadow(5px 5px 6px #525252);
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.entity_card_text {
+  height: 30vh;
+  width: 50vh;
+}

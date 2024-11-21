@@ -1,0 +1,25 @@
+.services_container {
+  background: url('./assets/services_bg.png') center top no-repeat;
+  background-size: cover;
+  color: white;
+}
+.services_text {
+  font-family: 'Bangers', system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.dis_none {
+  display: none;
+}
+.dis_block {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-optical-sizing: auto;
+  text-align: center;
+  font-style: normal;
+}
+.chakra-offset-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

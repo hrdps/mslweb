@@ -1,0 +1,33 @@
+#headerone {
+  height: 100px;
+  background-color: #000000;
+}
+#headertwo {
+  height: 100px;
+  background-color: #000000;
+}
+#menuIco {
+  cursor: pointer;
+  color: #ffffff;
+  margin-top: 200px;
+  position: fixed;
+  z-index: 999;
+  width: 36px;
+  mix-blend-mode: difference;
+  filter: invert(100%);
+}
+
+#menuImg {
+  width: 100px;
+  mix-blend-mode: difference;
+  margin-top: 200px;
+  position: fixed;
+  z-index: 999;
+  cursor: pointer;
+}
+.navItems {
+  font-family: 'Bangers', system-ui !important;
+  font-weight: 400 !important;
+  font-style: normal !important;
+  cursor: pointer;
+}
