@@ -1,5 +1,5 @@
 html {
-  background-color: #000000;
+  /* background-color: #000000; */
 }
 #scroll_div {
   animation: spotlight-animation 1s alternate infinite;

@@ -167,11 +167,12 @@ const Work = () => {
 
   return (
     <Box
-      px={{ base: 4, md: 8 }}
+      // px={{ base: 4, md: 8 }}
       py={8}
       bgAttachment="fixed"
       bgSize="cover"
       bgImage="url('http://mslindia.test/wp-content/uploads/2024/11/case-bg.png')"
+      minHeight='100vh'
     >
       {error && (
         <Alert status="error" mb={4}>
@@ -210,9 +211,9 @@ const Work = () => {
               ))}
             </TabList>
 
-            <TabPanels>
+            <TabPanels pt={4}>
               {tabData.map((tab, index) => (
-                <TabPanel key={index}>
+                <TabPanel p={0} key={index}>
                   {rows.map((row, rowIndex) => (
                     <Box key={rowIndex} mt={{ base: 8, md: 16 }}>
                       <MarqueeRow
