@@ -1,4 +1,9 @@
-#entity_bg {
+html {
+  /* background-color: #000000; */
+}
+#scroll_div {
+
+  /* #entity_bg {
   width: 100vw;
   height: 100vh;
   position: fixed;
@@ -6,8 +11,8 @@
   left: 0;
   animation: spotlight-animation 1s alternate infinite;
   overflow: hidden;
+} */
 }
-
 @keyframes spotlight-animation {
   0%,
   18%,

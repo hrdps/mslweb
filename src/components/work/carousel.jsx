@@ -1,40 +1,41 @@
 import React, { useState } from 'react';
 import { Box, Image, Text, HStack, Button } from '@chakra-ui/react';
 
-const Carousel = () => {
-    const [activeSlide, setActiveSlide] = useState(0);
-
-    const slides = [
-        'https://picsum.photos/200?random=1',
-        'https://picsum.photos/200?random=2',
-        'https://picsum.photos/200?random=3',
-        'https://picsum.photos/200?random=4',
-    ];
+const Carousel = ({ linksArray }) => {
+    const [activeIndex, setActiveIndex] = useState(0);
 
     const handleSlideChange = (index) => {
-        setActiveSlide(index);
+        setActiveIndex(index);
     };
 
     return (
-        <Box mx="auto" width={'600px'} border="2px solid #0015B3" borderRadius="8px" p="4" bg="#082992">
+        <Box
+            // maxW="800px" 
+            w={'100%'}
+            mx="auto"
+            height="100%" // Ensure the carousel stretches to full height
+            borderRadius="8px"
+            p="4"
+            bg="#082992"
+        >
             <Image
-                src={slides[activeSlide]}
-                alt={`Slide ${activeSlide}`}
-                mb="2"
+                src={linksArray[activeIndex]}
+                alt={`Slide ${activeIndex}`}
+                mb="4"
                 borderRadius="4px"
                 objectFit="cover"
                 w="100%"
             />
-            <Text color="white" fontSize="sm" textAlign="left" mb="4">
+            <Text color="white" fontSize="24px" textAlign="left" mb="4">
                 Social media post
             </Text>
-            <HStack justifyContent="center">
-                {slides.map((_, index) => (
+            <HStack justifyContent="center" spacing={2}>
+                {linksArray.map((_, index) => (
                     <Button
                         key={index}
-                        size="24px"
+                        size="xs"
                         onClick={() => handleSlideChange(index)}
-                        bg={index === activeSlide ? '#FF7F50' : 'white'}
+                        bg={index === activeIndex ? '#FF7F50' : 'white'}
                         borderRadius="full"
                         w="10px"
                         h="10px"
