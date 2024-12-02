@@ -76,7 +76,7 @@ const Header = () => {
           display={'flex'}>
           <img
             onClick={() => {
-              navigate('/');
+              navigate('/home');
             }}
             src='./assets/msl-logo-white.png'
             id='menuImg'
@@ -102,12 +102,16 @@ const Header = () => {
         bgColor={'#000000'}
         zIndex={'-998'}>
         <Grid
+          textAlign={'center'}
           id='navItem_container'
           templateColumns={['1fr 1fr 1fr 1fr 1fr']}
           color={'white'}
           marginBottom={'2%'}
           gap={['2', '3', '6', '5', '16']}>
           <Heading
+            onClick={() => {
+              navigate('/services');
+            }}
             className='navItems'
             fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
             alignItems={'center'}>
@@ -120,18 +124,27 @@ const Header = () => {
             PEOPLE
           </Heading>
           <Heading
+            onClick={() => {
+              navigate('/work');
+            }}
             className='navItems'
             fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
             alignItems={'center'}>
             WORK
           </Heading>
           <Heading
+            onClick={() => {
+              navigate('/network');
+            }}
             className='navItems'
             fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
             alignItems={'center'}>
-            NETWORK&nbsp;&nbsp;
+            NETWORK
           </Heading>
           <Heading
+            onClick={() => {
+              navigate('/entity');
+            }}
             className='navItems'
             fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
             alignItems={'center'}>

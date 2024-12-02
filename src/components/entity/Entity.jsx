@@ -1,4 +1,4 @@
-import { Text, Grid, Stack, VStack } from '@chakra-ui/react';
+import { Text, Grid, Stack, VStack, Img } from '@chakra-ui/react';
 import React, { useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
@@ -70,7 +70,7 @@ const Entity = () => {
         markers: false, // Debug markers
         start: 'top 0%',
         end: 'top -100%',
-        scrub: 2, // Smooth scrolling effect
+        scrub: 20, // Smooth scrolling effect
         pin: true, // Pin the trigger element
         ease: 'none', // Optional, controls easing
       },
@@ -90,18 +90,15 @@ const Entity = () => {
   return (
     <>
       <Header />
-      <Stack gap={0} overflowX={'hidden'}>
+      <Stack gap={0} overflow={'hidden'}>
+        <div id='entity_bg'></div>
         <div id='scroll_div'>
-          <Stack
-            h={'100vh'}
-            id='gsaptrigger'
-            overflow={'scroll'}
-            overflowX={'hidden'}>
+          <Stack h={'100vh'} id='gsaptrigger' overflowX={'hidden'}>
             <Grid
               id='entity_scroll'
               templateColumns={['1fr', '2fr 2fr 2fr 2fr']}
               w={'400vw'}
-              overflowX={'hidden'}>
+              overflow={'hidden'}>
               <VStack
                 w={'100vw'}
                 className='entity_div'
@@ -113,7 +110,10 @@ const Entity = () => {
                     <img src='./assets/msl-logo-white.png' />
                   </div>
                   <div className='entity_card_text'>
-                    <Text p={10} color={'white'} fontSize='lg'>
+                    <Text
+                      p={10}
+                      color={'white'}
+                      fontSize={['8px', '9px', 'xl']}>
                       <strong>MSL</strong>, part of Publicis Groupe, is a global
                       leader in public relations and integrated communications.
                       In India, MSL shines through its four powerhouse brands:
@@ -136,7 +136,10 @@ const Entity = () => {
                     <img src='./assets/organic.png' />
                   </div>
                   <div className='entity_card_text'>
-                    <Text p={10} color={'white'} fontSize='lg'>
+                    <Text
+                      p={10}
+                      color={'white'}
+                      fontSize={['8px', '9px', 'xl']}>
                       <strong>Organic by MSL</strong> is a creative powerhouse
                       that blends art, code, and copy to tell stories that
                       captivate, engage, and inspire. Our team of digital
@@ -160,7 +163,10 @@ const Entity = () => {
                     <img src='./assets/2020-msl-logo-white.png' />
                   </div>
                   <div className='entity_card_text'>
-                    <Text p={10} color={'white'} fontSize='lg'>
+                    <Text
+                      p={10}
+                      color={'white'}
+                      fontSize={['8px', '9px', 'xl']}>
                       A business-driven communications consultancy,{' '}
                       <strong>20:20 MSL</strong> is focused on delivering
                       integrated, creative programs through data-based insights,
@@ -185,7 +191,10 @@ const Entity = () => {
                     <img src='./assets/pca-logo-white.png' />
                   </div>
                   <div className='entity_card_text'>
-                    <Text p={10} color={'white'} fontSize='lg'>
+                    <Text
+                      p={10}
+                      color={'white'}
+                      fontSize={['8px', '9px', 'xl']}>
                       <strong>PCA</strong> specialises in advising Unicorns and
                       start-ups on their engagement strategy. PCA brings
                       together media relations, financial communication, public

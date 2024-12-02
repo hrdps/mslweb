@@ -5,6 +5,7 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [
     react(),
+
     {
       name: 'typescript',
       // enable type checking for .jsx files
@@ -13,4 +14,7 @@ export default defineConfig({
       enableJsx: true,
     },
   ],
+  server: {
+    host: true, // Enables access via network
+  },
 });

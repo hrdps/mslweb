@@ -12,13 +12,18 @@ import Work from './pages/Work';
 import Work2 from './v2/pages/work';
 import About from './v2/pages/about';
 import Services2 from './v2/pages/services';
-import CaseStudy from './pages/Case/index.jsx';
+// import CaseStudy from './pages/Case/index.jsx';
+
+import CaseStudy from './pages/Case';
+import Hometwo from './components/hometwo/Hometwo.jsx';
+import ImageCarousel from './components/hometwo/ImageCarousel.jsx';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/home' element={<Hometwo />} />
         <Route path='/network' element={<Network />} />
         <Route path='/location' element={<Location />} />
         <Route path='/entity' element={<Entity />} />
@@ -29,12 +34,11 @@ function App() {
         <Route path='/services' element={<Services />} />
         <Route path='/services2' element={<Services2 />} />
         <Route path='/header' element={<Header />} />
+        <Route path='/image' element={<ImageCarousel />} />
         <Route path='*' element={<FourZeroFour />} />
-        <Route path="/work/case-study/:slug" element={<CaseStudy />} />
-
+        <Route path='/work/case-study/:slug' element={<CaseStudy />} />
       </Routes>
     </Router>
-
   );
 }
 

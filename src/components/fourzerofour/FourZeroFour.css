@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Mono&display=swap');
+
+#fzf {
+  background: url('./assets/notfoundbg.png') center center no-repeat;
+  background-size: cover;
+}
+#fzf_btn {
+  margin: -300px 0px 300px 0px;
+  font-family: 'PT Mono', monospace;
+  font-weight: bold;
+  font-size: 25px;
+}
