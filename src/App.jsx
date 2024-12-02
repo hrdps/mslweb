@@ -10,7 +10,6 @@ import Header from './components/layout/Header.jsx';
 import Work from './pages/Work';
 import CaseStudy from './pages/Case';
 import Hometwo from './components/hometwo/Hometwo.jsx';
-import ImageCarousel from './components/hometwo/ImageCarousel.jsx';
 
 function App() {
   return (
@@ -24,7 +23,6 @@ function App() {
         <Route path='/work' element={<Work />} />
         <Route path='/services' element={<Services />} />
         <Route path='/header' element={<Header />} />
-        <Route path='/image' element={<ImageCarousel />} />
         <Route path='*' element={<FourZeroFour />} />
         <Route path='/work/case-study/:slug' element={<CaseStudy />} />
       </Routes>
