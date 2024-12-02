@@ -78,7 +78,7 @@ const Header = () => {
             onClick={() => {
               navigate('/home');
             }}
-            src='./assets/msl-logo-white.png'
+            src='./assets/25-MSL_Logo_new.png'
             id='menuImg'
           />
         </Container>
@@ -149,6 +149,51 @@ const Header = () => {
             fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
             alignItems={'center'}>
             ENTITIES
+          </Heading>
+          <Heading
+            onClick={() => {
+              navigate('/services2');
+            }}
+            className='navItems'
+            fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
+            alignItems={'center'}>
+            SERVICES v2
+          </Heading>
+          <Heading
+            onClick={() => {
+              navigate('/about');
+            }}
+            className='navItems'
+            fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
+            alignItems={'center'}>
+            PEOPLE v2
+          </Heading>
+          <Heading
+            onClick={() => {
+              navigate('/work2');
+            }}
+            className='navItems'
+            fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
+            alignItems={'center'}>
+            WORK v2
+          </Heading>
+          <Heading
+            onClick={() => {
+              navigate('/about');
+            }}
+            className='navItems'
+            fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
+            alignItems={'center'}>
+            NETWORK v2
+          </Heading>
+          <Heading
+            onClick={() => {
+              navigate('/entity2');
+            }}
+            className='navItems'
+            fontSize={['lg', 'xl', '3xl', '5xl', '6xl']}
+            alignItems={'center'}>
+            ENTITIES v2
           </Heading>
         </Grid>
       </VStack>

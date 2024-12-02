@@ -13,18 +13,17 @@
   position: fixed;
   z-index: 999;
   width: 36px;
-  mix-blend-mode: difference;
-  filter: invert(100%);
   -webkit-user-drag: none;
   user-select: none;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
+  mix-blend-mode: difference;
+  filter: invert(100%);
 }
 
 #menuImg {
-  width: 100px;
-  mix-blend-mode: difference;
+  width: 150px;
   margin-top: 200px;
   position: fixed;
   z-index: 999;
