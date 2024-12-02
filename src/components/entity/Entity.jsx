@@ -70,7 +70,7 @@ const Entity = () => {
         markers: false, // Debug markers
         start: 'top 0%',
         end: 'top -100%',
-        scrub: 20, // Smooth scrolling effect
+        scrub: 2, // Smooth scrolling effect
         pin: true, // Pin the trigger element
         ease: 'none', // Optional, controls easing
       },

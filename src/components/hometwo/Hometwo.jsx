@@ -80,6 +80,7 @@ const Hometwo = () => {
           <img src='./assets/workbg.gif' />
         </div>
         <div id='awards'></div>
+        <div id='clientele_head'></div>
         <div id='clientele'>
           <div id='cslider'>
             {cimages.length !== 0 ? (
@@ -104,6 +105,9 @@ const Hometwo = () => {
           <span id='three'></span>
           <span id='four'></span>
         </div>
+        <video autoPlay loop muted id='peoplewalk'>
+          <source src='./assets/output.webm' />
+        </video>
       </div>
     </>
   );

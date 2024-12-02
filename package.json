@@ -29,11 +29,8 @@
     "react-slick": "^0.30.2",
     "remixicon": "^4.3.0",
     "sass": "^1.77.8",
-<<<<<<< HEAD
     "scrollreveal": "^4.0.9",
-=======
     "slick-carousel": "^1.8.1",
->>>>>>> 01ae280338b3bde6e4510b92eb5c10be0b661d2c
     "swiper": "^11.1.5"
   },
   "devDependencies": {
