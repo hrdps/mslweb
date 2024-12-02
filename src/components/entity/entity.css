@@ -21,14 +21,14 @@ html {
   53%,
   57%,
   100% {
-    background: url('./assets/office1_l.png') fixed center top;
+    background: url('/assets/office1_l.png') fixed center top;
     background-size: cover;
     background-repeat: no-repeat;
   }
   20%,
   24%,
   55% {
-    background: url('./assets/office1.png') fixed center top;
+    background: url('/assets/office1.png') fixed center top;
     background-size: cover;
     background-repeat: no-repeat;
   }
