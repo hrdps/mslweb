@@ -4,6 +4,7 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { TextPlugin } from 'gsap/TextPlugin';
 import Location from './Location.jsx';
+import Header from '../layout/Header.jsx';
 
 const Network = () => {
   gsap.registerPlugin(useGSAP);
@@ -28,14 +29,17 @@ const Network = () => {
   });
 
   return (
-    <div id='network_main'>
-      <Location />
-      <div id='map_network'></div>
-      <div id='network_links'>
-        <div id='msl_scramble'></div>
+    <>
+      <Header />
+      <div id='network_main'>
+        <Location />
+        <div id='map_network'></div>
+        <div id='network_links'>
+          <div id='msl_scramble'></div>
+        </div>
+        <div id='go_back'></div>
       </div>
-      <div id='go_back'></div>
-    </div>
+    </>
   );
 };
 

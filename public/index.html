@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .skew-container {
+        height: 100vh; /* Full screen height */
+        background: linear-gradient(135deg, #6a11cb, #2575fc);
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+
+      .skew-content {
+        color: white;
+        font-size: 2rem;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.6);
+        transform: skewY(-10deg); /* Initial skew */
+        transition: transform 0.3s ease;
+      }
+
+      /* Responsive Skew Adjustments */
+      @media (max-width: 1200px) {
+        .skew-content {
+          transform: skewY(-8deg); /* Less skew on smaller screens */
+        }
+      }
+
+      @media (max-width: 768px) {
+        .skew-content {
+          transform: skewY(-5deg); /* Further reduce skew for tablets */
+        }
+      }
+
+      @media (max-width: 480px) {
+        .skew-content {
+          transform: skewY(-3deg); /* Minimal skew for mobile screens */
+          font-size: 1.5rem; /* Adjust font size */
+          padding: 15px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="skew-container">
+      <div class="skew-content">Responsive Skew</div>
+    </div>
+  </body>
+</html>

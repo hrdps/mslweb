@@ -8,7 +8,11 @@
 }
 
 .bangers-regular {
-  font-family: "Bangers", system-ui;
+  font-family: 'Bangers', system-ui;
   font-weight: normal;
   font-style: normal;
+}
+html,
+body {
+  overscroll-behavior: none;
 }

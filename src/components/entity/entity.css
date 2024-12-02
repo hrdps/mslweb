@@ -1,8 +1,11 @@
-html {
-  background-color: #000000;
-}
-#scroll_div {
+#entity_bg {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
   animation: spotlight-animation 1s alternate infinite;
+  overflow: hidden;
 }
 
 @keyframes spotlight-animation {

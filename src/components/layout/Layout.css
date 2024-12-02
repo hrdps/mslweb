@@ -15,6 +15,11 @@
   width: 36px;
   mix-blend-mode: difference;
   filter: invert(100%);
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 
 #menuImg {
@@ -24,10 +29,22 @@
   position: fixed;
   z-index: 999;
   cursor: pointer;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 }
 .navItems {
   font-family: 'Bangers', system-ui !important;
   font-weight: 400 !important;
   font-style: normal !important;
   cursor: pointer;
+}
+.navItems:hover {
+  background: linear-gradient(-45deg, #eeaa52, #e73c6f, #2394d5, #2af3b7);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 8px transparent;
 }

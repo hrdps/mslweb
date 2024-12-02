@@ -1,6 +1,21 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Box, Tabs, TabList, Tab, TabPanels, TabPanel, Alert, AlertIcon, Spinner } from '@chakra-ui/react';
+import {
+  Box,
+  Tabs,
+  TabList,
+  Tab,
+  TabPanels,
+  TabPanel,
+  Alert,
+  AlertIcon,
+  Spinner,
+} from '@chakra-ui/react';
 import Card from '../../components/work/card';
+import Header from '../../components/layout/Header';
+import gsap from 'gsap';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { CSSPlugin } from 'gsap/CSSPlugin';
 
 const MarqueeRow = ({ cards, isReverse }) => {
   const scrollRef = useRef(null);
@@ -37,7 +52,7 @@ const MarqueeRow = ({ cards, isReverse }) => {
     const handleHover = () => {
       clearInterval(animation);
       animation = setInterval(scroll, 75);
-    }
+    };
     const handleLeave = () => {
       clearInterval(animation);
       animation = setInterval(scroll, 2.5);
@@ -58,38 +73,41 @@ const MarqueeRow = ({ cards, isReverse }) => {
   return (
     <Box
       ref={scrollRef}
-      className="marquee-container"
-      overflow="hidden"
-      position="relative"
-      w="100%"
+      className='marquee-container'
+      overflow='hidden'
+      position='relative'
+      w='100%'
       css={{
         '&::-webkit-scrollbar': {
-          display: 'none'
+          display: 'none',
         },
         scrollbarWidth: 'none',
-        'msOverflowStyle': 'none'
-      }}
-    >
-      <Box
-        className="marquee-content"
-        display="flex"
-        position="relative"
-      >
+        msOverflowStyle: 'none',
+      }}>
+      <Box className='marquee-content' display='flex' position='relative'>
         {duplicatedCards.map((card, index) => (
           <Box
             key={index}
             px={6}
-            w={{ base: '100%', md: 'calc(100% / 2)', lg: 'calc(100% / 2)', xl: 'calc(100% / 2.5)' }}
-            flex="0 0 auto"
-          >
-            <Card title={card.title} imageUrl={card.imageUrl} category={card.category} slug={card.slug} />
+            w={{
+              base: '100%',
+              md: 'calc(100% / 2)',
+              lg: 'calc(100% / 2)',
+              xl: 'calc(100% / 2.5)',
+            }}
+            flex='0 0 auto'>
+            <Card
+              title={card.title}
+              imageUrl={card.imageUrl}
+              category={card.category}
+              slug={card.slug}
+            />
           </Box>
         ))}
       </Box>
     </Box>
   );
 };
-
 
 const Work = () => {
   const [cards, setCards] = useState([]);
@@ -105,12 +123,15 @@ const Work = () => {
         const apiToken = import.meta.env.VITE_API_TOKEN;
         const postsPerPage = import.meta.env.VITE_POSTS_PER_PAGE;
 
-        const response = await fetch(`${apiUrl}/case-study?per_page=${postsPerPage}`, {
-          headers: {
-            'Authorization': `Bearer ${apiToken}`,
-            'Content-Type': 'application/json'
+        const response = await fetch(
+          `${apiUrl}/case-study?per_page=${postsPerPage}`,
+          {
+            headers: {
+              Authorization: `Bearer ${apiToken}`,
+              'Content-Type': 'application/json',
+            },
           }
-        });
+        );
 
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
@@ -124,7 +145,11 @@ const Work = () => {
             imageUrl: item.featured_media
               ? await fetchMediaUrl(apiUrl, apiToken, item.featured_media)
               : 'https://picsum.photos/400/300',
-            category: await fetchCategoryName(apiUrl, apiToken, item.categories[0]),
+            category: await fetchCategoryName(
+              apiUrl,
+              apiToken,
+              item.categories[0]
+            ),
             slug: item.slug,
           }))
         );
@@ -147,7 +172,7 @@ const Work = () => {
     if (category === 'ALL') {
       setFilteredCards(cards);
     } else {
-      const filtered = cards.filter(card => card.category === category);
+      const filtered = cards.filter((card) => card.category === category);
       setFilteredCards(filtered);
     }
   };
@@ -157,7 +182,7 @@ const Work = () => {
     { label: 'MSL', category: 'MSL' },
     { label: 'PCA', category: 'PCA' },
     { label: 'ORGANIC', category: 'Organic' },
-    { label: '2020', category: '2020' }
+    { label: '2020', category: '2020' },
   ];
 
   const rows = [];
@@ -166,68 +191,79 @@ const Work = () => {
   }
 
   return (
-    <Box
-      px={{ base: 4, md: 8 }}
-      py={8}
-      bgAttachment="fixed"
-      bgSize="cover"
-      bgImage="url('http://mslindia.test/wp-content/uploads/2024/11/case-bg.png')"
-    >
-      {error && (
-        <Alert status="error" mb={4}>
-          <AlertIcon />
-          {error}
-        </Alert>
-      )}
+    <>
+      <Header />
+      <Box
+        minH={'100vh'}
+        id='work_main_tag'
+        px={{ base: 4, md: 8 }}
+        py={8}
+        bgAttachment='fixed'
+        bgSize='cover'
+        bgImage="url('http://mslindia.test/wp-content/uploads/2024/11/case-bg.png')">
+        {error && (
+          <Alert status='error' mb={4}>
+            <AlertIcon />
+            {error}
+          </Alert>
+        )}
 
-      {loading ? (
-        <Box display="flex" justifyContent="center" alignItems="center" h="300px">
-          <Spinner />
-        </Box>
-      ) : (
-        <>
-          <Tabs
-            pt={16}
-            variant="enclosed"
-            defaultIndex={0}
-            onChange={(index) => handleCategoryChange(tabData[index].category)}
-          >
-            <TabList borderBottom={0} justifyContent="center" gap={{ base: "11px", md: "22px" }}>
-              {tabData.map((tab, index) => (
-                <Tab
-                  key={index}
-                  className='bangers-regular'
-                  size='lg'
-                  px={{ base: 4, md: 16 }}
-                  py={{ base: 0, md: 1 }}
-                  fontSize={{ base: "21px", md: "32px" }}
-                  borderRadius={13}
-                  _selected={{ bg: '#FF8C5F', color: 'black' }}
-                  bg="white"
-                >
-                  {tab.label}
-                </Tab>
-              ))}
-            </TabList>
+        {loading ? (
+          <Box
+            display='flex'
+            justifyContent='center'
+            alignItems='center'
+            h='300px'>
+            <Spinner />
+          </Box>
+        ) : (
+          <>
+            <Tabs
+              pt={16}
+              variant='enclosed'
+              defaultIndex={0}
+              onChange={(index) =>
+                handleCategoryChange(tabData[index].category)
+              }>
+              <TabList
+                borderBottom={0}
+                justifyContent='center'
+                gap={{ base: '11px', md: '22px' }}>
+                {tabData.map((tab, index) => (
+                  <Tab
+                    key={index}
+                    className='bangers-regular'
+                    size='lg'
+                    px={{ base: 4, md: 16 }}
+                    py={{ base: 0, md: 1 }}
+                    fontSize={{ base: '21px', md: '32px' }}
+                    borderRadius={13}
+                    _selected={{ bg: '#FF8C5F', color: 'black' }}
+                    bg='white'>
+                    {tab.label}
+                  </Tab>
+                ))}
+              </TabList>
 
-            <TabPanels>
-              {tabData.map((tab, index) => (
-                <TabPanel key={index}>
-                  {rows.map((row, rowIndex) => (
-                    <Box key={rowIndex} mt={{ base: 8, md: 16 }}>
-                      <MarqueeRow
-                        cards={row}
-                        isReverse={rowIndex % 2 !== 0}
-                      />
-                    </Box>
-                  ))}
-                </TabPanel>
-              ))}
-            </TabPanels>
-          </Tabs>
-        </>
-      )}
-    </Box>
+              <TabPanels>
+                {tabData.map((tab, index) => (
+                  <TabPanel key={index}>
+                    {rows.map((row, rowIndex) => (
+                      <Box key={rowIndex} mt={{ base: 8, md: 16 }}>
+                        <MarqueeRow
+                          cards={row}
+                          isReverse={rowIndex % 2 !== 0}
+                        />
+                      </Box>
+                    ))}
+                  </TabPanel>
+                ))}
+              </TabPanels>
+            </Tabs>
+          </>
+        )}
+      </Box>
+    </>
   );
 };
 
@@ -237,9 +273,9 @@ async function fetchMediaUrl(apiUrl, apiToken, mediaId) {
   try {
     const mediaResponse = await fetch(`${apiUrl}/media/${mediaId}`, {
       headers: {
-        'Authorization': `Bearer ${apiToken}`,
-        'Content-Type': 'application/json'
-      }
+        Authorization: `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
     });
 
     if (mediaResponse.ok) {
@@ -256,9 +292,9 @@ async function fetchCategoryName(apiUrl, apiToken, categoryId) {
   try {
     const categoryResponse = await fetch(`${apiUrl}/categories/${categoryId}`, {
       headers: {
-        'Authorization': `Bearer ${apiToken}`,
-        'Content-Type': 'application/json'
-      }
+        Authorization: `Bearer ${apiToken}`,
+        'Content-Type': 'application/json',
+      },
     });
 
     if (categoryResponse.ok) {

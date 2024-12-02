@@ -43,9 +43,9 @@ const Services = () => {
         markers: false,
         start: 'top 0%',
         end: 'top -100%',
-        scrub: 2,
+        scrub: 10,
         pin: true,
-        ease: 'rough',
+        ease: 'steps',
         onUpdate: (self) => {
           const prog = Math.floor(self.progress * 4);
           if (prog !== lastProg) {
@@ -67,7 +67,9 @@ const Services = () => {
         alignItems={'center'}
         justifyContent={'center'}
         lineHeight={1.2}>
-        <Text className='services_text' fontSize={['4xl', '5xl', '7xl']}>
+        <Text
+          className={!isNone[0] ? 'services_text' : 'services_text_selected'}
+          fontSize={!isNone[0] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
           Strategy & Insights
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[0]}>
@@ -88,7 +90,9 @@ const Services = () => {
             shape impactful strategies for our clients.
           </Box>
         </ScaleFade>
-        <Text className='services_text' fontSize={['4xl', '5xl', '7xl']}>
+        <Text
+          className={!isNone[1] ? 'services_text' : 'services_text_selected'}
+          fontSize={!isNone[1] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
           Digital & Social Media
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[1]}>
@@ -109,7 +113,9 @@ const Services = () => {
             that engage, connect, and inspire action.
           </Box>
         </ScaleFade>
-        <Text className='services_text' fontSize={['4xl', '5xl', '7xl']}>
+        <Text
+          className={!isNone[2] ? 'services_text' : 'services_text_selected'}
+          fontSize={!isNone[2] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
           Media & Crisis
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[2]}>
@@ -130,7 +136,9 @@ const Services = () => {
             protect your reputation and navigate challenges with confidence.
           </Box>
         </ScaleFade>
-        <Text className='services_text' fontSize={['4xl', '5xl', '7xl']}>
+        <Text
+          className={!isNone[3] ? 'services_text' : 'services_text_selected'}
+          fontSize={!isNone[3] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
           Policy & Regulation
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[3]}>
@@ -151,7 +159,9 @@ const Services = () => {
             policy and regulatory environments.
           </Box>
         </ScaleFade>
-        <Text className='services_text' fontSize={['4xl', '5xl', '7xl']}>
+        <Text
+          className={!isNone[4] ? 'services_text' : 'services_text_selected'}
+          fontSize={!isNone[4] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
           Content & Video
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[4]}>
