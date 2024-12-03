@@ -113,7 +113,15 @@ const Entity = () => {
                     <Text
                       p={10}
                       color={'white'}
-                      fontSize={['8px', '9px', 'xl']}>
+                      fontSize={[
+                        '2xs',
+                        '2xs',
+                        '3xs',
+                        '3xs',
+                        '2xs',
+                        'md',
+                        'md',
+                      ]}>
                       <strong>MSL</strong>, part of Publicis Groupe, is a global
                       leader in public relations and integrated communications.
                       In India, MSL shines through its four powerhouse brands:
@@ -139,7 +147,15 @@ const Entity = () => {
                     <Text
                       p={10}
                       color={'white'}
-                      fontSize={['8px', '9px', 'xl']}>
+                      fontSize={[
+                        '2xs',
+                        '2xs',
+                        '3xs',
+                        '3xs',
+                        '2xs',
+                        'md',
+                        'md',
+                      ]}>
                       <strong>Organic by MSL</strong> is a creative powerhouse
                       that blends art, code, and copy to tell stories that
                       captivate, engage, and inspire. Our team of digital
@@ -166,7 +182,15 @@ const Entity = () => {
                     <Text
                       p={10}
                       color={'white'}
-                      fontSize={['8px', '9px', 'xl']}>
+                      fontSize={[
+                        '2xs',
+                        '2xs',
+                        '3xs',
+                        '3xs',
+                        '2xs',
+                        'md',
+                        'md',
+                      ]}>
                       A business-driven communications consultancy,{' '}
                       <strong>20:20 MSL</strong> is focused on delivering
                       integrated, creative programs through data-based insights,
@@ -194,7 +218,15 @@ const Entity = () => {
                     <Text
                       p={10}
                       color={'white'}
-                      fontSize={['8px', '9px', 'xl']}>
+                      fontSize={[
+                        '2xs',
+                        '2xs',
+                        '3xs',
+                        '3xs',
+                        '2xs',
+                        'md',
+                        'md',
+                      ]}>
                       <strong>PCA</strong> specialises in advising Unicorns and
                       start-ups on their engagement strategy. PCA brings
                       together media relations, financial communication, public
@@ -208,9 +240,6 @@ const Entity = () => {
             </Grid>
           </Stack>
         </div>
-        {/* <Stack h={'100vh'} bg={'yellow.100'}></Stack>
-      <VStack h={'100vh'} bg={'blue.100'}></VStack>
-      <VStack h={'100vh'} bg={'green.100'}></VStack> */}
       </Stack>
     </>
   );
