@@ -8,7 +8,7 @@ html {
   top: 0;
   left: 0;
   overflow: hidden;
-  background: url('/assets/office1_l.png') fixed center top;
+  background: url('https://res.cloudinary.com/depykl2hm/image/upload/v1733209354/office1_l_uglymv.png') fixed center top;
   background-size: cover;
   background-repeat: no-repeat;
 }
