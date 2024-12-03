@@ -4,9 +4,11 @@ import Header from '../layout/Header';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Loading from '../layout/Loading';
 
 const Hometwo = () => {
   const [cimages, setCimages] = useState([]);
+  const [loading, setLoading] = useState(true);
   const slidersettings = {
     dots: false, // Show navigation dots
     infinite: true, // Loop through images
@@ -57,6 +59,12 @@ const Hometwo = () => {
   }, []);
   return (
     <>
+      {loading ? (
+        <>
+          <Loading />
+        </>
+      ) : (
+        <>
       <Header />
       <div id='bgContainer'>
         <div>
@@ -109,6 +117,8 @@ const Hometwo = () => {
           <source src='https://res.cloudinary.com/depykl2hm/video/upload/v1733209131/output_dfdrfu.webm' />
         </video>
       </div>
+    </>
+      )}
     </>
   );
 };
