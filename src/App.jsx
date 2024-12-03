@@ -21,8 +21,8 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/home' element={<Hometwo />} />
+        <Route path='/' element={<Hometwo />} />
+        <Route path='/home' element={<Home />} />
         <Route path='/network' element={<Network />} />
         <Route path='/location' element={<Location />} />
         <Route path='/entity' element={<Entity />} />
