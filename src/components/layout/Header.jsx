@@ -76,7 +76,7 @@ const Header = () => {
           display={'flex'}>
           <img
             onClick={() => {
-              navigate('/home');
+              navigate('/');
             }}
             src='./assets/25-MSL_Logo_new.png'
             id='menuImg'
