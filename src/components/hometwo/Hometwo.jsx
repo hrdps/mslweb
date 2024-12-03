@@ -56,6 +56,21 @@ const Hometwo = () => {
       setCimages(cimagesarray);
     };
     getClientele();
+    const handlePageLoad = () => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500);
+    };
+    // Listen for the page and media load
+    if (document.readyState === 'complete') {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2500);
+    } else {
+      window.addEventListener('load', handlePageLoad);
+    }
+
+    return () => window.removeEventListener('load', handlePageLoad);
   }, []);
   return (
     <>
