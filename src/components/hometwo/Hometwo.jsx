@@ -61,23 +61,23 @@ const Hometwo = () => {
       <div id='bgContainer'>
         <div>
           <video autoPlay loop muted id='bgImage'>
-            <source src='./assets/new_bg.mp4' type='video/mp4' />
+            <source src='https://res.cloudinary.com/depykl2hm/video/upload/v1733209096/new_bg_l3inr7.mp4' type='video/mp4' />
           </video>
         </div>
         <div id='entity'></div>
         <div id='network'>
-          <img src='./assets/network.gif' />
+          <img src='https://res.cloudinary.com/depykl2hm/image/upload/v1733209097/network_mibbqp.gif' />
         </div>
         <div id='services'>
-          <img src='./assets/services.jpeg' />
+          <img src='https://res.cloudinary.com/depykl2hm/image/upload/v1733209097/services_rrbhss.jpg' />
         </div>
         <div id='people'>
           <video autoPlay loop muted id='peopleBg'>
-            <source src='./assets/people_video.mov' type='video/mp4' />
+            <source src='https://res.cloudinary.com/depykl2hm/video/upload/v1733209129/people_video_fhofxy.mp4' type='video/mp4' />
           </video>
         </div>
         <div id='work'>
-          <img src='./assets/workbg.gif' />
+          <img src='https://res.cloudinary.com/depykl2hm/image/upload/v1733211120/workbg_ey692k.gif' />
         </div>
         <div id='awards'></div>
         <div id='clientele_head'></div>
@@ -106,7 +106,7 @@ const Hometwo = () => {
           <span id='four'></span>
         </div>
         <video autoPlay loop muted id='peoplewalk'>
-          <source src='./assets/output.webm' />
+          <source src='https://res.cloudinary.com/depykl2hm/video/upload/v1733209131/output_dfdrfu.webm' />
         </video>
       </div>
     </>
