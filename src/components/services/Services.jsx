@@ -69,7 +69,7 @@ const Services = () => {
         lineHeight={1.2}>
         <Text
           className={!isNone[0] ? 'services_text' : 'services_text_selected'}
-          fontSize={!isNone[0] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
+          fontSize={!isNone[0] ? ['2xl', '3xl', '5xl'] : ['2xl', '3xl', '5xl']}>
           Strategy & Insights
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[0]}>
@@ -83,7 +83,7 @@ const Services = () => {
             shadow='md'
             color={'black'}
             w={'60%'}
-            fontSize={['md', 'md', '2xl']}>
+            fontSize={['md', 'md', 'md', 'md', 'md', 'lg', 'xl', '2xl', '2xl']}>
             At MSL India, we turn insights into influence. Our expert team,
             powered by advanced research tools and data platforms, dives deep
             into consumer and industry trends to uncover the key insights that
@@ -92,7 +92,7 @@ const Services = () => {
         </ScaleFade>
         <Text
           className={!isNone[1] ? 'services_text' : 'services_text_selected'}
-          fontSize={!isNone[1] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
+          fontSize={!isNone[1] ? ['2xl', '3xl', '5xl'] : ['2xl', '3xl', '5xl']}>
           Digital & Social Media
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[1]}>
@@ -106,7 +106,7 @@ const Services = () => {
             shadow='md'
             color={'black'}
             w={'60%'}
-            fontSize={['md', 'md', '2xl']}>
+            fontSize={['md', 'md', 'md', 'md', 'md', 'lg', 'xl', '2xl', '2xl']}>
             We craft digital experiences that resonate. From strategy and
             storytelling to media planning and execution, we blend creativity
             with tech—bringing together art, code, and copy to create campaigns
@@ -115,7 +115,7 @@ const Services = () => {
         </ScaleFade>
         <Text
           className={!isNone[2] ? 'services_text' : 'services_text_selected'}
-          fontSize={!isNone[2] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
+          fontSize={!isNone[2] ? ['2xl', '3xl', '5xl'] : ['2xl', '3xl', '5xl']}>
           Media & Crisis
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[2]}>
@@ -129,7 +129,7 @@ const Services = () => {
             className={!isNone[2] ? 'dis_none' : 'dis_block'}
             color={'black'}
             w={'60%'}
-            fontSize={['lg', 'xl', '2xl']}>
+            fontSize={['md', 'md', 'md', 'md', 'md', 'lg', 'xl', '2xl', '2xl']}>
             When it comes to media relations, our seasoned professionals help
             you seize opportunities and shape a strong, consistent narrative. In
             times of crisis, our strategic approach ensures you’re prepared to
@@ -138,7 +138,7 @@ const Services = () => {
         </ScaleFade>
         <Text
           className={!isNone[3] ? 'services_text' : 'services_text_selected'}
-          fontSize={!isNone[3] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
+          fontSize={!isNone[3] ? ['2xl', '3xl', '5xl'] : ['2xl', '3xl', '5xl']}>
           Policy & Regulation
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[3]}>
@@ -152,7 +152,7 @@ const Services = () => {
             className={!isNone[3] ? 'dis_none' : 'dis_block'}
             color={'black'}
             w={'60%'}
-            fontSize={['lg', 'xl', '2xl']}>
+            fontSize={['md', 'md', 'md', 'md', 'md', 'lg', 'xl', '2xl', '2xl']}>
             No two public affairs challenges are the same. Our custom solutions
             are built on thorough research and analysis, designed to meet the
             specific needs of your business while navigating the complexities of
@@ -161,7 +161,7 @@ const Services = () => {
         </ScaleFade>
         <Text
           className={!isNone[4] ? 'services_text' : 'services_text_selected'}
-          fontSize={!isNone[4] ? ['4xl', '5xl', '7xl'] : ['5xl', '6xl', '8xl']}>
+          fontSize={!isNone[4] ? ['2xl', '3xl', '5xl'] : ['2xl', '3xl', '5xl']}>
           Content & Video
         </Text>
         <ScaleFade initialScale={0.9} in={isOpen[4]}>
@@ -175,7 +175,7 @@ const Services = () => {
             className={!isNone[4] ? 'dis_none' : 'dis_block'}
             color={'black'}
             w={'60%'}
-            fontSize={['lg', 'xl', '2xl']}>
+            fontSize={['md', 'md', 'md', 'md', 'md', 'lg', 'xl', '2xl', '2xl']}>
             Our in-house production studio combines editorial flair, artistic
             vision, and cutting-edge technology to produce powerful multimedia
             content. From videos to graphics, we deliver stories that captivate
