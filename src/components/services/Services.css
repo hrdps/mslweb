@@ -1,5 +1,5 @@
 .services_container {
-  background: url('./assets/services_bg.png') center top no-repeat;
+  background: url('/assets/services_bg.png') center top no-repeat;
   background-size: cover;
   color: white;
 }
